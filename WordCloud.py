@@ -28,10 +28,9 @@ text = codecs.open(path + '\\' + 'texto.txt', 'r', 'utf-8').read().lower()
 # print(text)
 
 # Palavras a serem destacadas
-text += "horita " * 30
-text += "python " * 15
-text += "safra " * 7
-text += "resultados " * 6
+text += "python " * 7
+text += "safra " * 4
+text += "resultados " * 3
 
 # Remove símbolos especiais
 symbols = string.punctuation + string.digits + '•–'
@@ -52,10 +51,10 @@ words = create_dictionary(text, stopwords)
 # print(words)
 
 # Gerar uma wordcloud
-# wordcloud = wc.WordCloud(background_color="black", repeat=False, width=6200, height=3200)   # Backgroud, black
-# wordcloud = wc.WordCloud(background_color="white", repeat=False, width=6200, height=3200)   # Backgroud, white
+# wordcloud = wc.WordCloud(background_color="black", repeat=False, width=9200, height=5200)   # Backgroud, black
+wordcloud = wc.WordCloud(background_color="white", repeat=False, width=9200, height=5200)   # Backgroud, white
 # wordcloud = wc.WordCloud(background_color="black", repeat=False, width=3000, height=3000)   # Frontend, black
-wordcloud = wc.WordCloud(background_color="white", repeat=False, width=3200, height=3200)   # Frontend, white
+# wordcloud = wc.WordCloud(background_color="white", repeat=False, width=3200, height=3200)   # Frontend, white
 wordcloud.generate_from_frequencies(words)  # .generate(all_words)
 # print(wordcloud.layout_)
 
